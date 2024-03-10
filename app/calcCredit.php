@@ -33,7 +33,7 @@ if ( $interestRate == "") {
 //nie ma sensu walidować dalej gdy brak parametrów
 if (empty( $messages1 )) {
 	
-	// sprawdzenie, czy $x i $y są liczbami całkowitymi
+	// sprawdzenie, czy $credit i $years są liczbami całkowitymi
 	if (! is_numeric( $credit )) {
 		$messages1 [] = 'Kwota kredytu - wartość nie jest liczbą całkowitą';
 	}
@@ -47,7 +47,6 @@ if (empty( $messages1 )) {
 
 }
 
-// 3. wykonaj zadanie jeśli wszystko w porządku
 
 if (empty ( $messages1 )) { // gdy brak błędów
 	
