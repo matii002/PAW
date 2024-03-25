@@ -1,12 +1,5 @@
 <?php
 require_once dirname(__FILE__).'/../config.php';
-
-// KONTROLER strony kalkulatora
-
-// W kontrolerze niczego nie wysyła się do klienta.
-// Wysłaniem odpowiedzi zajmie się odpowiedni widok.
-// Parametry do widoku przekazujemy przez zmienne.
-
 //ochrona kontrolera - poniższy skrypt przerwie przetwarzanie w tym punkcie gdy użytkownik jest niezalogowany
 include _ROOT_PATH.'/app/security/check.php';
 
@@ -21,8 +14,6 @@ function getParams(&$credit,&$years,&$interestRate){
 function validate(&$credit,&$years,&$interestRate,&$messages){
 	// sprawdzenie, czy parametry zostały przekazane
 	if ( ! (isset($credit) && isset($years) && isset($interestRate))) {
-		// sytuacja wystąpi kiedy np. kontroler zostanie wywołany bezpośrednio - nie z formularza
-		// teraz zakładamy, ze nie jest to błąd. Po prostu nie wykonamy obliczeń
 		return false;
 	}
 
@@ -88,7 +79,4 @@ if ( validate($credit,$years,$interestRate,$messages) ) { // gdy brak błędów
 	process($credit,$years,$interestRate,$messages,$result);
 }
 
-// Wywołanie widoku z przekazaniem zmiennych
-// - zainicjowane zmienne ($messages,$credit,$years,$interestRate,$result)
-//   będą dostępne w dołączonym skrypcie
 include 'calc_view.php';
