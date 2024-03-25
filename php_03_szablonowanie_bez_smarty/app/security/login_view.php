@@ -1,5 +1,5 @@
 <?php include _ROOT_PATH.'/templates/top.php';?>
-<div style="width:90%; margin: 2em auto;">
+<div>
 <form action="<?php print(_APP_ROOT); ?>/app/security/login.php" method="GET">
 	<legend>Logowanie</legend>
 	<fieldset>

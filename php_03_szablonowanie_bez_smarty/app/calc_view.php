@@ -1,7 +1,7 @@
 <?php
 include _ROOT_PATH.'/templates/top.php';
 ?>
-<div style="width:90%; margin: 2em 2em 2em 20em;">
+<div>
 	<a href="<?php print(_APP_ROOT); ?>/app/security/logout.php">Wyloguj</a>
 </div>
 
